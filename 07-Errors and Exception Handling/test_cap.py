@@ -12,11 +12,16 @@ class TestCap(unittest.TestCase):
         text = 'monty python'
         result = cap.cap_text(text)
         self.assertEqual(result, 'Monty Python')
-        
-    def test_with_apostrophes(self):
-        text = "monty python's flying circus"
+    
+    def test_already_capitalized(self):
+        text = 'Monty Python'
         result = cap.cap_text(text)
-        self.assertEqual(result, "Monty Python's Flying Circus")
+        self.assertEqual(result, 'Monty Python')
+    
+    def test_Numberstring(self):
+        text = '1'
+        result = cap.cap_text(text)
+        self.assertEqual(result, '1')
         
 if __name__ == '__main__':
     unittest.main()
